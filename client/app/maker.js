@@ -29,6 +29,8 @@ const DomoForm = (props) => {
             <input id='domoAge' type='text' name='age' placeholder='Domo Age' />
             <label htmlFor='level'>Level: </label>
             <input id='domoLevel' type='text' name='level' placeholder='Domo Level' />
+            <label htmlFor='money'>Money: </label>
+            <input id='domoMoney' type='text' name='money' placeholder='Domo Money' />
             <input type='hidden' name='_csrf' value={props.csrf} />
             <input className='makeDomoSubmit' type='submit' value='Make Domo' />
         </form>
@@ -51,7 +53,6 @@ const DomoList = function(props) {
                 <h3 className='domoName'> Name: {domo.name} </h3>
                 <h3 className='domoAge'> Age: {domo.age} </h3>
                 <h3 className='domoLevel'> Level: {domo.level} </h3>
-                
             </div>
         );
     });

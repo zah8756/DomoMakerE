@@ -1,43 +1,19 @@
-'use strict';
+// var handleDomo = function handleDomo(e) {
+//     e.preventDefault();
 
-var handleDomo = function handleDomo(e) {
-    e.preventDefault();
+//     $('#domoMessage').animate({ width: 'hide' }, 350);
 
-    $('#domoMessage').animate({ width: 'hide' }, 350);
+//     if ($('#domoName').val() == '' || $('#domoAge').val() == '' || $('#domoLevel').val() == '' || $('#domoMoney').val() == '') {
+//         handleError('RAWR! All fields are required');
+//         return false;
+//     }
 
-    if ($('#domoName').val() == '' || $('#domoAge').val() == '' || $('#domoLevel').val() == '' || $('#domoMoney').val() == '') {
-        handleError('RAWR! All fields are required');
-        return false;
-    }
+//     sendAjax('POST', $('#domoForm').attr('action'), $('#domoForm').serialize(), function () {
+//         loadDomosFromServer();
+//     });
 
-    sendAjax('POST', $('#domoForm').attr('action'), $('#domoForm').serialize(), function () {
-        loadDomosFromServer();
-    });
-
-    return false;
-};
-
-var DomoForm = function DomoForm(props) {
-    return React.createElement(
-        'form',
-        { id: 'domoForm',
-            onSubmit: handleDomo,
-            name: 'domoForm',
-            action: '/maker',
-            method: 'POST',
-            className: 'domoForm' },
-        React.createElement('label',{ htmlFor: 'name' },'Name: '),
-        React.createElement('input', { id: 'domoName', type: 'text', name: 'name', placeholder: 'Domo Name' }),
-        React.createElement('label', { htmlFor: 'age' },'Age: '),
-        React.createElement('input', { id: 'domoAge', type: 'text', name: 'age', placeholder: 'Domo Age' }),
-        React.createElement('label', { htmlFor: 'level' },'Level: '),
-        React.createElement('input', { id: 'domoLevel', type: 'text', name: 'level', placeholder: 'Domo Level' }),
-        React.createElement('label', { htmlFor: 'money' },'money: '),
-        React.createElement('input', { id: 'domoMoney', type: 'text', name: 'money', placeholder: 'Domo Level' }),
-        React.createElement('input', { type: 'hidden', name: '_csrf', value: props.csrf }),
-        React.createElement('input', { className: 'makeDomoSubmit', type: 'submit', value: 'Make Domo' })
-    );
-};
+//     return false;
+// };
 
 var DomoList = function DomoList(props) {
     if (props.domos.length === 0) {
@@ -65,17 +41,10 @@ var DomoList = function DomoList(props) {
                 ' '
             ),
             React.createElement(
-                'h3',
-                { className: 'domoAge' },
-                ' Age: ',
-                domo.age,
-                ' '
-            ),
-            React.createElement(
               'h3',
-              { className: 'domoLevel' },
-              ' Level: ',
-              domo.level,
+              { className: 'domoMoney' },
+              ' Money: $',
+              domo.money,
               ' '
             )
         );
@@ -95,7 +64,7 @@ var loadDomosFromServer = function loadDomosFromServer() {
 };
 
 var setup = function setup(csrf) {
-    ReactDOM.render(React.createElement(DomoForm, { csrf: csrf }), document.querySelector('#makeDomo'));
+    // ReactDOM.render(React.createElement(DomoForm, { csrf: csrf }), document.querySelector('#makeDomo'));
 
     ReactDOM.render(React.createElement(DomoList, { domos: [] }), document.querySelector('#domos'));
 
