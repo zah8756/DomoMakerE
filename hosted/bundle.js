@@ -26,18 +26,12 @@ var DomoForm = function DomoForm(props) {
             action: '/maker',
             method: 'POST',
             className: 'domoForm' },
-        React.createElement(
-            'label',
-            { htmlFor: 'name' },
-            'Name: '
-        ),
+        React.createElement('label',{ htmlFor: 'name' },'Name: '),
         React.createElement('input', { id: 'domoName', type: 'text', name: 'name', placeholder: 'Domo Name' }),
-        React.createElement(
-            'label',
-            { htmlFor: 'age' },
-            'Age: '
-        ),
+        React.createElement('label', { htmlFor: 'age' },'Age: '),
         React.createElement('input', { id: 'domoAge', type: 'text', name: 'age', placeholder: 'Domo Age' }),
+        React.createElement('label', { htmlFor: 'level' },'Level: '),
+        React.createElement('input', { id: 'domoLevel', type: 'text', name: 'level', placeholder: 'Domo Level' }),
         React.createElement('input', { type: 'hidden', name: '_csrf', value: props.csrf }),
         React.createElement('input', { className: 'makeDomoSubmit', type: 'submit', value: 'Make Domo' })
     );
@@ -74,6 +68,13 @@ var DomoList = function DomoList(props) {
                 ' Age: ',
                 domo.age,
                 ' '
+            ),
+            React.createElement(
+              'h3',
+              { className: 'domoLevel' },
+              ' Level: ',
+              domo.level,
+              ' '
             )
         );
     });
