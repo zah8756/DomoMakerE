@@ -12,7 +12,7 @@ const DomoList = function(props) {
             <div key={domo._id} className='domo'>
                 <img src='/assets/img/domoFace.jpeg' alt='domo face' className='domoFace'/>
                 <h3 className='domoName'> Name: {domo.name} </h3>
-                <h3 className='domoMoney'> Money:$ {domo.money} </h3>
+                {/* <h3 className='domoMoney'> Money:$ {domo.money} </h3> */}
             </div>
         );
     });

@@ -39,14 +39,14 @@ var DomoList = function DomoList(props) {
                 ' Name: ',
                 domo.name,
                 ' '
-            ),
-            React.createElement(
-              'h3',
-              { className: 'domoMoney' },
-              ' Money: $',
-              domo.money,
-              ' '
             )
+            // ,React.createElement(
+            //   'h3',
+            //   { className: 'domoMoney' },
+            //   ' Money: $',
+            //   domo.money,
+            //   ' '
+            // )
         );
     });
 

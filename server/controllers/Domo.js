@@ -12,14 +12,14 @@ const makerPage = (req, res) => {
 };
 
 const makeDomo = (req, res) => {
-  if (!req.body.name || !req.body.age || !req.body.level || !req.body.money) {
+  if (!req.body.name || !req.body.age || !req.body.level) {
     return res.status(400).json({ error: 'RAWR! All fields are required' });
   }
   const domoData = {
     name: req.body.name,
     age: req.body.age,
     level: req.body.level,
-    money: req.body.money,
+    // money: req.body.money,
     owner: req.session.account._id,
   };
 

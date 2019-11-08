@@ -28,11 +28,11 @@ const DomoSchema = new mongoose.Schema({
     required: true,
   },
 
-  money: {
-    type: Number,
-    min: 0,
-    required: true,
-  },
+  // money: {
+  //   type: Number,
+  //   min: 0,
+  //   required: true,
+  // },
 
   owner: {
     type: mongoose.Schema.ObjectId,

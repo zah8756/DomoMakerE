@@ -5,7 +5,7 @@ var handleDomo = function handleDomo(e) {
 
     $('#domoMessage').animate({ width: 'hide' }, 350);
 
-    if ($('#domoName').val() == '' || $('#domoAge').val() == '' || $('#domoLevel').val() == '' || $('#domoMoney').val() == '') {
+    if ($('#domoName').val() == '' || $('#domoAge').val() == '' || $('#domoLevel').val() == '') {
         handleError('RAWR! All fields are required');
         return false;
     }
@@ -32,8 +32,8 @@ var DomoForm = function DomoForm(props) {
         React.createElement('input', { id: 'domoAge', type: 'text', name: 'age', placeholder: 'Domo Age' }),
         React.createElement('label', { htmlFor: 'level' },'Level: '),
         React.createElement('input', { id: 'domoLevel', type: 'text', name: 'level', placeholder: 'Domo Level' }),
-        React.createElement('label', { htmlFor: 'money' },'money: '),
-        React.createElement('input', { id: 'domoMoney', type: 'text', name: 'money', placeholder: 'Domo Money' }),
+        // React.createElement('label', { htmlFor: 'money' },'money: '),
+        // React.createElement('input', { id: 'domoMoney', type: 'text', name: 'money', placeholder: 'Domo Money' }),
         React.createElement('input', { type: 'hidden', name: '_csrf', value: props.csrf }),
         React.createElement('input', { className: 'makeDomoSubmit', type: 'submit', value: 'Make Domo' })
     );
