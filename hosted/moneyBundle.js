@@ -1,19 +1,4 @@
-// var handleDomo = function handleDomo(e) {
-//     e.preventDefault();
-
-//     $('#domoMessage').animate({ width: 'hide' }, 350);
-
-//     if ($('#domoName').val() == '' || $('#domoAge').val() == '' || $('#domoLevel').val() == '' || $('#domoMoney').val() == '') {
-//         handleError('RAWR! All fields are required');
-//         return false;
-//     }
-
-//     sendAjax('POST', $('#domoForm').attr('action'), $('#domoForm').serialize(), function () {
-//         loadDomosFromServer();
-//     });
-
-//     return false;
-// };
+'use strict';
 
 var DomoList = function DomoList(props) {
     if (props.domos.length === 0) {
@@ -41,11 +26,11 @@ var DomoList = function DomoList(props) {
                 ' '
             ),
             React.createElement(
-              'h3',
-              { className: 'domoMoney' },
-              ' Money: $',
-              domo.money,
-              ' '
+                'h3',
+                { className: 'domoMoney' },
+                ' Money:$ ',
+                domo.money,
+                ' '
             )
         );
     });
@@ -63,9 +48,7 @@ var loadDomosFromServer = function loadDomosFromServer() {
     });
 };
 
-var setup = function setup(csrf) {
-    // ReactDOM.render(React.createElement(DomoForm, { csrf: csrf }), document.querySelector('#makeDomo'));
-
+var setup = function setup() {
     ReactDOM.render(React.createElement(DomoList, { domos: [] }), document.querySelector('#domos'));
 
     loadDomosFromServer();
